@@ -1,15 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Page d'Accueil - Navbar App{% endblock %}
 
-{% block body %}
-<div class="flex items-center justify-center h-screen bg-gray-100">
-    <div>
-        <h1 class="text-3xl font-bold text-center">Bienvenue sur mon Portfolio</h1>
-        <p class="text-center text-gray-600 mt-4">
-            Cette page est générée avec Symfony, React et Tailwind CSS.
-        </p>
-        <div id="react-root" class="mt-10"></div>
-    </div>
-</div>
+{% block navbar %}
+    {{ parent() }}  {# Inclut la navbar de base.html.twig #}
+{% endblock %}
+
+{% block content %}
+    <section class="home-content p-6">
+        <h1 class="text-3xl font-bold mb-4">Bienvenue sur notre site !</h1>
+        <p class="mb-4">Explorez nos services, produits et bien plus encore.</p>
+
+        <div class="features">
+            <div class="feature-item">
+                <h2 class="text-xl font-semibold">Nos Services</h2>
+                <p>Découvrez ce que nous avons à offrir en termes de services et de produits.</p>
+            </div>
+            <div class="feature-item">
+                <h2 class="text-xl font-semibold">Nos Produits</h2>
+                <p>Explorez notre catalogue de produits de qualité.</p>
+            </div>
+        </div>
+    </section>
 {% endblock %}

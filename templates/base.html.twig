@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Portfolio{% endblock %}</title>
-        {{ encore_entry_link_tags('app') }}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {{ encore_entry_script_tags('app') }}
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Mon Application{% endblock %}</title>
+ {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+  {% endblock %}
+</head>
+<body>
+{{ encore_entry_script_tags('app') }}
+    <div id="react-navbar"></div>  {# Ce div est où ton Navbar React sera monté #}
+
+    {% block navbar %}{% endblock %}  {# Le bloc navbar qui sera rempli par chaque page qui étend base.html.twig #}
+
+    <div id="app">
+        {% block content %}{% endblock %}
+    </div>
+
+    {# Inclusion du script JS généré par Webpack Encore #}
+    
+
+</body>
 </html>

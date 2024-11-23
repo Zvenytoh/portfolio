@@ -1,16 +1,16 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * This file will be included onto the page via the importmap() Twig function,
- * which should already be in your base.html.twig.
- */
-import './styles/app.css';
-
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
 import React from "react";
-import { createRoot } from "react-dom/client";
-import HelloReact from "./components/HelloReact";
+import ReactDOM from "react-dom/client";
+import "/home/mehdi/Documents/projets/portfolio/assets/styles/app.css"; // Assurez-vous que le CSS est bien importé
+import Navbar from "/home/mehdi/Documents/projets/portfolio/assets/components/Navbar.js"; // Assurez-vous d'importer la navbar correctement
 
-const root = createRoot(document.getElementById("react-root"));
-root.render(<HelloReact />);
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarElement = document.getElementById("react-navbar");
+
+  if (navbarElement) {
+    // Crée un "root" React pour la navbar
+    const root = ReactDOM.createRoot(navbarElement);
+
+    // Rends la navbar React dans cet élément
+    root.render(<Navbar />);
+  }
+});

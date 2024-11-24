@@ -1,15 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 {% block content_inner %}
     <div class="fade-in">
+        <!-- Section Header -->
         <h1 class="text-4xl font-bold text-center text-white px-12 py-4 text-glow">
-  Présentation
-</h1>
+            Présentation
+        </h1>
 
+        <!-- Section Content -->
+        <div class="text-white px-8 py-4">
+            <p>
+                Bienvenue sur mon portfolio. Je suis développeur passionné spécialisé dans la création
+                d'applications web et mobiles. Mon expertise repose sur des technologies modernes comme
+                React, Flutter, et Symfony. J'aime résoudre des problèmes complexes et construire des
+                interfaces utilisateur intuitives.
+            </p>
+            <p>
+                Je suis toujours à la recherche de nouveaux défis et d'opportunités pour collaborer sur des projets intéressants.
+                Explorez mes projets ci-dessous pour en savoir plus sur mon travail et mes compétences.
+            </p>
+            <p>
+                En dehors du développement, je m'intéresse à la conception UX/UI, aux technologies open-source, et à l'apprentissage
+                continu dans le domaine de la technologie.
+            </p>
 
-
-
+            <!-- Duplicate sections for scrolling -->
+            {% for i in 1..10 %}
+                <h2 class="text-2xl font-semibold mt-8 mb-4">Projet {{ i }}</h2>
+                <p>
+                    Ce projet met en avant mon expertise en développement web/mobile. Grâce à une collaboration étroite
+                    avec les clients, j'ai conçu une solution efficace répondant à leurs besoins spécifiques. Explorez mes
+                    compétences en utilisant des outils modernes tels que React, Django, et bien d'autres.
+                </p>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

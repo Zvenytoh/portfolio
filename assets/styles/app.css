@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    background: linear-gradient(to right, #734b6d, #42275a) !important;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -14,82 +10,103 @@ html, body {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(20px); /* Petit déplacement vers le bas au début */
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Retour à la position initiale */
+    transform: translateY(0);
   }
 }
 
 /* Classe pour appliquer l'animation */
 .fade-in {
-  animation: fadeIn 2s ease-out forwards; /* 2s pour l'animation, 'ease-out' pour une fin douce */
-}
-body, html {
-  height: 100%; /* Permet de gérer toute la hauteur de la page */
-  margin: 0; /* Enlever les marges par défaut */
-  display: flex;
-  flex-direction: column;
+  animation: fadeIn 2s ease-out forwards;
 }
 
+/* Navbar Styles */
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #42275a; /* Exemple de couleur de fond */
+  background-color: #42275a; /* Violet sombre */
   z-index: 1000;
+  transition: background-color 0.3s ease;
+  border-bottom: 2px solid #6a3c8c; /* Ligne violet clair sous la navbar */
 }
 
-.content {
-  flex: 1;
-  padding-top: 20px; /* Si tu veux un léger espace au début */
+.navbar:hover {
+  background-color: #531c5a; /* Légère éclaircissement du violet au survol */
 }
 
-/* app.css */
-.text-relief {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0px 0px 25px rgba(255, 255, 255, 0.3);
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Permet de mettre le logo à gauche et les liens au centre */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  width: 100%;
 }
-/* app.css */
-.text-glow {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.7);
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem; /* Taille du logo */
+  font-weight: bold;
+  transition: color 0.3s ease;
+  flex-shrink: 0; /* Empêche le logo de se redimensionner ou se déplacer */
 }
-@keyframes glow {
+
+.links-container {
+  display: flex;
+  justify-content: center; /* Centre les liens horizontalement */
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #9b4de2; /* Violet clair au survol */
+  transform: scale(1.1);
+}
+
+.nav-link:active {
+  transform: scale(0.95);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(to right, #531c5a 0%, #3a0a45 50%, #000000 100%);
+  background-size: 200% 100%;
+  animation: bg 15s ease infinite;
+  min-height: 100%;
+}
+
+@keyframes bg {
   0% {
-    text-shadow: 
-      0 0 5px #9b59b6, 
-      0 0 10px #9b59b6, 
-      0 0 15px #9b59b6, 
-      0 0 20px #9b59b6, 
-      0 0 25px #9b59b6, 
-      0 0 30px #9b59b6, 
-      0 0 35px #9b59b6;
+    background-position-x: 0;
   }
   50% {
-    text-shadow: 
-      0 0 10px #9b59b6, 
-      0 0 20px #9b59b6, 
-      0 0 30px #9b59b6, 
-      0 0 40px #9b59b6, 
-      0 0 50px #9b59b6, 
-      0 0 60px #9b59b6, 
-      0 0 70px #9b59b6;
+    background-position-x: 100%;
   }
   100% {
-    text-shadow: 
-      0 0 5px #9b59b6, 
-      0 0 10px #9b59b6, 
-      0 0 15px #9b59b6, 
-      0 0 20px #9b59b6, 
-      0 0 25px #9b59b6, 
-      0 0 30px #9b59b6, 
-      0 0 35px #9b59b6;
+    background-position-x: 0;
   }
 }
-/* Application de l'animation au texte */
-.text-glow {
-  animation: glow 1.5s ease-in-out infinite;
-  font-weight: bold;
-  color: #fff; /* Couleur du texte */
-}
-

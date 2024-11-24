@@ -2,6 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: rgb(135, 235, 165);
+html, body {
+    background: linear-gradient(to right, #734b6d, #42275a) !important;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+/* Définir l'animation fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Petit déplacement vers le bas au début */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Retour à la position initiale */
+  }
+}
+
+/* Classe pour appliquer l'animation */
+.fade-in {
+  animation: fadeIn 2s ease-out forwards; /* 2s pour l'animation, 'ease-out' pour une fin douce */
+}
+body, html {
+  height: 100%; /* Permet de gérer toute la hauteur de la page */
+  margin: 0; /* Enlever les marges par défaut */
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #42275a; /* Exemple de couleur de fond */
+  z-index: 1000;
+}
+
+.content {
+  flex: 1;
+  padding-top: 20px; /* Si tu veux un léger espace au début */
+}
+
+/* app.css */
+.text-relief {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0px 0px 25px rgba(255, 255, 255, 0.3);
+}
+/* app.css */
+.text-glow {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.7), 0 0 16px rgba(255, 255, 255, 0.7);
+}
+@keyframes glow {
+  0% {
+    text-shadow: 
+      0 0 5px #9b59b6, 
+      0 0 10px #9b59b6, 
+      0 0 15px #9b59b6, 
+      0 0 20px #9b59b6, 
+      0 0 25px #9b59b6, 
+      0 0 30px #9b59b6, 
+      0 0 35px #9b59b6;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px #9b59b6, 
+      0 0 20px #9b59b6, 
+      0 0 30px #9b59b6, 
+      0 0 40px #9b59b6, 
+      0 0 50px #9b59b6, 
+      0 0 60px #9b59b6, 
+      0 0 70px #9b59b6;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #9b59b6, 
+      0 0 10px #9b59b6, 
+      0 0 15px #9b59b6, 
+      0 0 20px #9b59b6, 
+      0 0 25px #9b59b6, 
+      0 0 30px #9b59b6, 
+      0 0 35px #9b59b6;
+  }
+}
+/* Application de l'animation au texte */
+.text-glow {
+  animation: glow 1.5s ease-in-out infinite;
+  font-weight: bold;
+  color: #fff; /* Couleur du texte */
+}
+

@@ -50,6 +50,8 @@ Encore
 
   // Enable React support if needed
   .enableReactPreset();
+  
+Encore.enableVersioning(Encore.isProduction());
 
 // Export the Webpack configuration
 module.exports = Encore.getWebpackConfig();

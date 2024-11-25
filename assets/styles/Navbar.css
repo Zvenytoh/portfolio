@@ -1,0 +1,126 @@
+/* Général Navbar */
+.navbar-container {
+  display: flex;
+  align-items: center; /* Aligne les éléments au centre verticalement */
+  justify-content: space-between; /* Espace égal entre le logo, les liens et les icônes */
+  margin: 0; /* Enlève la marge par défaut */
+  width: 100%; /* La navbar prend toute la largeur de l'écran */
+  padding: 0 16px; /* Espacement horizontal */
+  height: 80px; /* Hauteur de la navbar */
+  background-color: #120022; /* Couleur de fond de la navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre sous la navbar pour un effet 3D léger */
+  transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out; /* Transition pour les changements de couleur et de taille */
+  border-bottom-left-radius: 12px; /* Radius (arrondi) sur le coin inférieur gauche */
+  border-bottom-right-radius: 12px; /* Radius (arrondi) sur le coin inférieur droit */
+}
+
+/* Effet de survol de la navbar : changement de couleur et de hauteur */
+.navbar-container:hover {
+  background-color: #200034; /* Couleur de fond sombre sur hover */
+  height: 85px; /* Hauteur légèrement augmentée pour l'effet de survol */
+}
+
+/* Animation de la barre sous la navbar */
+.navbar-container::after {
+  content: ''; /* Crée un élément sans contenu visible */
+  position: absolute; /* Positionne l'élément sous la navbar */
+  left: 0; /* L'élément commence à gauche */
+  bottom: 0; /* L'élément est aligné en bas */
+  width: 100%; /* Largeur de la barre */
+  height: 3px; /* Hauteur de la barre */
+  background-color: #9b4de2; /* Couleur de la barre (violet) */
+  transform: scaleX(0); /* Initialement invisible (réduit à 0) */
+  transition: transform 0.3s ease-in-out; /* Animation pour l'apparition de la barre */
+  transform-origin: right; /* Animation de la barre partant de la droite */
+}
+
+/* Animation de la barre lorsqu'on survole la navbar */
+.navbar-container:hover::after {
+  transform: scaleX(1); /* La barre devient visible et s'étend de gauche à droite */
+  transform-origin: left; /* L'animation commence du côté gauche */
+}
+
+/* Logo Mehdi.Dev */
+.logo {
+  font-size: 24px; /* Taille du texte pour le logo */
+  font-weight: bold; /* Texte en gras */
+  color: white; /* Couleur du texte */
+  text-decoration: none; /* Enlève la sous-ligne du lien */
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out; /* Transition plus rapide pour les effets */
+}
+
+/* Effet de survol du logo : changement de couleur et agrandissement */
+.logo:hover {
+  transform: scale(1.1); /* Agrandissement léger du logo */
+  color: #9b4de2; /* Changement de couleur du texte au survol */
+}
+
+/* Liens au centre */
+.nav-links {
+  display: flex; /* Utilisation de flexbox pour organiser les liens */
+  gap: 32px; /* Espacement égal entre les liens */
+  justify-content: center; /* Centrage des liens horizontalement */
+  align-items: center; /* Centrage des liens verticalement */
+}
+
+/* Style de chaque lien */
+.nav-link {
+  color: white; /* Couleur du texte des liens */
+  font-size: 18px; /* Taille du texte */
+  font-weight: 500; /* Poids de la police */
+  text-decoration: none; /* Enlève la sous-ligne des liens */
+  position: relative; /* Position relative pour permettre l'animation du cadre */
+  padding: 8px 12px; /* Espacement autour du texte */
+  transition: all 0.2s ease-in-out; /* Transition plus rapide pour les effets */
+}
+
+/* Effet de survol du lien : changement de couleur */
+.nav-link:hover {
+  color: #9b4de2; /* Changement de couleur au survol */
+}
+
+/* Cadre autour du lien au survol */
+.nav-link::before {
+  content: ''; /* Crée un élément sans contenu visible */
+  position: absolute; /* Positionne le cadre autour du lien */
+  left: 0; /* Positionne le cadre à gauche du texte */
+  right: 0; /* Positionne le cadre à droite du texte */
+  top: 0; /* Positionne le cadre au-dessus du texte */
+  bottom: 0; /* Positionne le cadre en dessous du texte */
+  border: 2px solid transparent; /* Initialement transparent */
+  border-radius: 6px; /* Arrondit légèrement les coins du cadre */
+  background: rgba(155, 77, 226, 0.1); /* Fond subtil derrière le cadre */
+  transform: scale(0); /* Le cadre est invisible au départ */
+  transition: transform 0.2s ease-in-out; /* Transition rapide pour l'animation */
+}
+
+/* Animation du cadre lorsque le lien est survolé */
+.nav-link:hover::before {
+  transform: scale(1); /* Le cadre s'affiche au survol */
+}
+
+/* Icônes sociales */
+.social-icons {
+  display: flex; /* Utilisation de flexbox pour organiser les icônes */
+  gap: 24px; /* Espacement égal entre les icônes */
+  align-items: center; /* Alignement vertical des icônes */
+}
+
+/* Style de chaque icône */
+.social-icons a {
+  color: white; /* Couleur des icônes */
+  font-size: 24px; /* Taille des icônes */
+  transition: transform 0.2s ease, color 0.2s ease; /* Transition plus rapide pour l'animation */
+}
+
+/* Effet de survol des icônes : agrandissement et changement de couleur */
+.social-icons a:hover {
+  transform: scale(1.2); /* Agrandissement léger des icônes au survol */
+  color: #9b4de2; /* Changement de couleur au survol */
+}
+
+/* Effet d'activation des icônes (lorsque l'on clique dessus) */
+.social-icons a:active {
+  transform: scale(0.95); /* Légère réduction de taille pour un effet d'activation */
+  color: #6f2dbd; /* Changement de couleur lors de l'activation */
+}

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const links = [
@@ -9,79 +10,80 @@ const links = [
 ];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <motion.nav
-      className="navbar"
+      className="navbar-container"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="navbar-container">
-        {/* Logo */}
+      {/* Logo à gauche */}
+      <motion.a
+        href="#home"
+        className="logo"
+        whileHover={{ scale: 1.1, color: "#9b4de2" }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Mehdi.Dev
+      </motion.a>
+
+      {/* Liens au centre */}
+      <motion.div className="nav-links">
+        {links.map((link, index) => (
+          <motion.a
+            key={link.name}
+            href={link.href}
+            className="nav-link"
+            whileHover={{
+              scale: 1.05,
+              color: "#9b4de2",
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.3 }}
+          >
+            {link.name}
+          </motion.a>
+        ))}
+      </motion.div>
+
+      {/* Icônes à droite */}
+      <motion.div
+        className="social-icons"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
         <motion.a
-          href="#home"
-          className="logo text-3xl font-bold text-white hover:text-purple-400 transition-colors"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6, ease: "backOut" }}
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2, color: "#9b4de2" }}
+          whileTap={{ scale: 0.95 }}
         >
-          Mehdi.Dev
+          <FaGithub />
         </motion.a>
-
-        {/* Navigation Links */}
-        <div className="links-container">
-          <ul className="nav-links hidden md:flex space-x-8">
-            {links.map((link, index) => (
-              <motion.li
-                key={link.name}
-                className="text-white text-lg font-medium relative group"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-              >
-                <a href={link.href} className="nav-link">
-                  {link.name}
-                </a>
-                {/* Underline animation */}
-                <span className="absolute left-0 bottom-[-5px] h-[2px] w-0 bg-purple-400 group-hover:w-full transition-all duration-300"></span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Menu Mobile */}
-        <motion.div
-          className="text-white font-medium md:hidden"
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setIsOpen(!isOpen)}
+        <motion.a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2, color: "#9b4de2" }}
+          whileTap={{ scale: 0.95 }}
         >
-          <span>Menu</span>
-        </motion.div>
-      </div>
-
-      {/* Menu Mobile Links */}
-      {isOpen && (
-        <motion.div
-          className="md:hidden mt-4 space-y-4 px-6 py-4 backdrop-blur-lg bg-black/70"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          <FaLinkedin />
+        </motion.a>
+        <motion.a
+          href="/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.2, color: "#9b4de2" }}
+          whileTap={{ scale: 0.95 }}
         >
-          {links.map((link) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              className="block text-white text-lg hover:text-purple-400 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {link.name}
-            </motion.a>
-          ))}
-        </motion.div>
-      )}
+          <FaFileAlt />
+        </motion.a>
+      </motion.div>
     </motion.nav>
   );
 };

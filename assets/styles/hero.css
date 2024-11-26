@@ -1,0 +1,97 @@
+.hero-section {
+  padding: 4rem 2rem;
+  text-align: left;
+}
+
+.hero-text {
+  font-size: 3rem; /* Grand texte */
+  font-weight: 700; /* Très gras */
+  color: #1a202c; /* Gris foncé */
+  line-height: 1.2; /* Hauteur de ligne */
+}
+
+.hero-description {
+  margin-top: 1rem;
+  font-size: 1.5rem; /* Taille intermédiaire */
+  font-weight: 400; /* Normal */
+  color: #4a5568; /* Gris clair */
+}
+
+.highlight {
+  color: #2d6a4f; /* Vert feuille */
+  font-weight: 700; /* Semi-bold */
+}
+/* Corps de la page */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Police moderne et épurée */
+  scroll-behavior: smooth; /* Transition fluide au scroll */
+}
+
+.bg-gray-900 {
+  background-color: #1a202c; /* Fond sombre pour un contraste optimal */
+}
+
+.text-white {
+  color: #ffffff; /* Texte principal */
+}
+
+.text-gray-300 {
+  color: #e2e8f0; /* Texte secondaire */
+}
+
+.text-5xl {
+  font-size: 3rem; /* Taille du texte principal */
+}
+
+.text-6xl {
+  font-size: 4rem; /* Taille du texte principal pour écrans plus larges */
+}
+
+.font-bold {
+  font-weight: 700; /* Texte en gras */
+}
+
+.mt-4 {
+  margin-top: 1rem; /* Espacement entre le titre et le sous-texte */
+}
+
+.leading-tight {
+  line-height: 1.2; /* Espacement resserré entre les lignes */
+}
+
+.tracking-tight {
+  letter-spacing: -0.015em; /* Espacement des lettres réduit */
+}
+
+.max-w-lg {
+  max-width: 32rem; /* Limite la largeur du texte */
+}
+
+.hero-text {
+  font-family: 'Montserrat', sans-serif; /* Police spécifique pour le titre */
+}
+/* Effet de bordure animée */
+@keyframes borderAnimation {
+  0% {
+    border-width: 2px;
+    border-color: transparent;
+  }
+  50% {
+    border-width: 6px;
+    border-color: #32CD32; /* Couleur de la bordure */
+  }
+  100% {
+    border-width: 2px;
+    border-color: transparent;
+  }
+}
+
+.animate-border {
+  animation: borderAnimation 2s infinite; /* Animation continue avec une durée de 2 secondes */
+}
+
+/* Effet d'aura au survol */
+.hero-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Ombre plus intense pour l'aura */
+}

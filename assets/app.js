@@ -5,7 +5,7 @@ import { motion } from "framer-motion"; // Importer framer-motion
 import "/home/mehdi/Documents/projets/portfolio/assets/styles/app.css";
 import Navbar from "/home/mehdi/Documents/projets/portfolio/assets/components/Navbar.js";
 import "/home/mehdi/Documents/projets/portfolio/assets/styles/Navbar.css";
-
+import "/home/mehdi/Documents/projets/portfolio/assets/styles/hero.css";
 // Composants de tes pages
 import Home from "/home/mehdi/Documents/projets/portfolio/assets/components/Home.js";
 import About from "/home/mehdi/Documents/projets/portfolio/assets/components/About.js";
@@ -82,4 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const root = ReactDOM.createRoot(navbarElement);
     root.render(<App />);
   }
+
+      
 });
+
+

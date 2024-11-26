@@ -8,17 +8,19 @@
 }
 
 html, body {
+  scroll-behavior: smooth;
   height: 100%;
   margin: 0;
   overflow-x: hidden;
 }
 
 body {
-  background-color: #354f52; /* Couleur de fond de la page définie en utilisant ta palette */
+  background-color: #014842; /* Couleur de fond de la page définie en utilisant ta palette */
   color: #FFFFFF; /* Assure que le texte est en blanc pour le contraste */
   font-family: Arial, sans-serif; /* Style de police par défaut pour la lisibilité */
   margin: 0;
   padding: 0;
+    font-family: 'Poppins', sans-serif; /* Applique Poppins à l'ensemble du site */
 }
 
 @keyframes bg {
@@ -31,4 +33,7 @@ body {
   100% {
     background-position-x: 0;
   }
+}
+.hero-text {
+  font-family: 'Montserrat', sans-serif; /* Police spécifique pour le titre */
 }

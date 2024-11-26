@@ -14,10 +14,11 @@ html, body {
 }
 
 body {
-  background: linear-gradient(to right, #531c5a 0%, #3a0a45 50%, #000000 100%);
-  background-size: 200% 100%;
-  animation: bg 15s ease infinite;
-  min-height: 100%;
+  background-color: #354f52; /* Couleur de fond de la page définie en utilisant ta palette */
+  color: #FFFFFF; /* Assure que le texte est en blanc pour le contraste */
+  font-family: Arial, sans-serif; /* Style de police par défaut pour la lisibilité */
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes bg {

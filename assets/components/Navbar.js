@@ -1,12 +1,13 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // Importer Link de React Router
 
 const links = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projets", href: "/projets" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -19,9 +20,9 @@ const Navbar = () => {
     >
       {/* Logo à gauche */}
       <motion.a
-        href="#home"
+        href="/"
         className="logo"
-        whileHover={{ scale: 1.1, color: "#9b4de2" }}
+        whileHover={{ scale: 1.1, color: "#FFC470" }} // Accent chaleureux
         whileTap={{ scale: 0.95 }}
       >
         Mehdi.Dev
@@ -30,13 +31,11 @@ const Navbar = () => {
       {/* Liens au centre */}
       <motion.div className="nav-links">
         {links.map((link, index) => (
-          <motion.a
+          <motion.div
             key={link.name}
-            href={link.href}
-            className="nav-link"
             whileHover={{
               scale: 1.05,
-              color: "#9b4de2",
+              color: "#4793AF", // Couleur principale
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.95 }}
@@ -44,8 +43,14 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.3 }}
           >
-            {link.name}
-          </motion.a>
+            {/* Remplacer <a> par <Link> */}
+            <Link
+              to={link.href}  
+              className="nav-link"
+            >
+              {link.name}
+            </Link>
+          </motion.div>
         ))}
       </motion.div>
 
@@ -57,19 +62,19 @@ const Navbar = () => {
         transition={{ delay: 0.5, duration: 0.5 }}
       >
         <motion.a
-          href="https://github.com"
+          href="https://github.com/Zvenytoh"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.2, color: "#9b4de2" }}
+          whileHover={{ scale: 1.2, color: "#DD5746" }} // Couleur secondaire
           whileTap={{ scale: 0.95 }}
         >
           <FaGithub />
         </motion.a>
         <motion.a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/mehdi-ennajeh-8294272b6/"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.2, color: "#9b4de2" }}
+          whileHover={{ scale: 1.2, color: "#DD5746" }} // Couleur secondaire
           whileTap={{ scale: 0.95 }}
         >
           <FaLinkedin />
@@ -78,7 +83,7 @@ const Navbar = () => {
           href="/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.2, color: "#9b4de2" }}
+          whileHover={{ scale: 1.2, color: "#DD5746" }} // Couleur secondaire
           whileTap={{ scale: 0.95 }}
         >
           <FaFileAlt />
